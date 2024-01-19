@@ -1,4 +1,5 @@
-// Front-end environment with ES6 modules
+// import dayjs from 'dayjs';
+// import customParseFormat from 'dayjs/plugin/customParseFormat';
 // import dayjs from 'dayjs';
 // import customParseFormat from 'dayjs/plugin/customParseFormat';
 // dayjs.extend(customParseFormat);
@@ -23,8 +24,6 @@ for (let i = 0; i < stdTime.length; i++) {
     createRow.classList.add('row');
     createContainer.appendChild(createRow);
 
- 
-
     // Create a div element for the time
     const time = document.createElement('div');
     time.setAttribute("class",'hour col-1');
@@ -32,7 +31,7 @@ for (let i = 0; i < stdTime.length; i++) {
 
     // Create a paragraph element to display the time
     const timeList = document.createElement('p');
-    timeList.setAttribute("class",'time-list');
+    timeList.classList.add('time-list');
     timeList.innerHTML = `${stdTime[i]}:00`;
     time.appendChild(timeList);
 
@@ -68,5 +67,4 @@ function colorCode() {
 
 
 colorCode();
-
 
