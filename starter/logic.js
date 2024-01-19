@@ -1,7 +1,7 @@
 // Front-end environment with ES6 modules
-//import dayjs from 'dayjs';
-//import customParseFormat from 'dayjs/plugin/customParseFormat';
-//dayjs.extend(customParseFormat);
+// import dayjs from 'dayjs';
+// import customParseFormat from 'dayjs/plugin/customParseFormat';
+// dayjs.extend(customParseFormat);
 
 // Display the current date at the top of the page
 const date = dayjs().format('dddd, MMMM D, YYYY');
@@ -23,6 +23,8 @@ for (let i = 0; i < stdTime.length; i++) {
     createRow.classList.add('row');
     createContainer.appendChild(createRow);
 
+ 
+
     // Create a div element for the time
     const time = document.createElement('div');
     time.setAttribute("class",'hour col-1');
@@ -30,7 +32,7 @@ for (let i = 0; i < stdTime.length; i++) {
 
     // Create a paragraph element to display the time
     const timeList = document.createElement('p');
-    timeList.classList.add('time-list');
+    timeList.setAttribute("class",'time-list');
     timeList.innerHTML = `${stdTime[i]}:00`;
     time.appendChild(timeList);
 
@@ -49,5 +51,22 @@ for (let i = 0; i < stdTime.length; i++) {
     save.appendChild(saveIcon);
 }
 
+//add color to the time blocks to indicate past, present, and future
+//create a function to compare the current time to the time block
+function colorCode() {
+    const currentHour = dayjs().hour();
+    for (let i = 0; i < timeId.length; i++) {
+        if (timeId[i] < currentHour) {
+            document.getElementById(timeId[i]).setAttribute("class",'past');
+        } else if (timeId[i] === currentHour) {
+            document.getElementById(timeId[i]).setAttribute("class",'present');
+        } else {
+            document.getElementById(timeId[i]).setAttribute("class",'future');
+        }
+    }
+}
+
+
+colorCode();
 
 
