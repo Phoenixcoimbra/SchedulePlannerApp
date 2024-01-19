@@ -56,17 +56,17 @@ for (let i = 0; i < stdTime.length; i++) {
     });
 }
 
-// Create a textarea element for user input
-const textArea = document.createElement('textarea');
-textArea.setAttribute("class",'text-area col-10');
-textArea.setAttribute('id', `${timeId[i]}`);
-createRow.appendChild(textArea);
+// // Create a textarea element for user input
+// const textArea = document.createElement('textarea');
+// textArea.setAttribute("class",'text-area col-10');
+// textArea.setAttribute('id', `${timeId[i]}`);
+// createRow.appendChild(textArea);
 
-// Retrieve the saved data from local storage and set it as the value of the textarea
-const savedText = localStorage.getItem(timeId[i]);
-if (savedText) {
-    textArea.value = savedText;
-}
+// // Retrieve the saved data from local storage and set it as the value of the textarea
+// const savedText = localStorage.getItem(timeId[i]);
+// if (savedText) {
+//     textArea.value = savedText;
+// }
 
 
 
